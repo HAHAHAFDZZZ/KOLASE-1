@@ -29,7 +29,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            width: 750px; /* Sesuaikan lebar kontrol agar sesuai dengan kolase */
+            width: 750px;
             max-width: 90%;
         }
         
@@ -43,26 +43,26 @@
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            width: calc(100% - 18px); /* Lebar penuh */
+            width: calc(100% - 18px);
         }
 
         #kontrol-area input[type="file"] {
             margin-bottom: 5px;
         }
 
-        /* CONTAINER UTAMA KOLASE - Meniru struktur gambar */
+        /* CONTAINER UTAMA KOLASE */
         #kolase-wrapper {
-            width: 800px; /* Lebar keseluruhan kolase seperti di gambar */
-            background-color: white; /* Latar belakang putih */
+            width: 800px;
+            background-color: white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             border-radius: 5px;
-            overflow: hidden; /* Pastikan konten tidak meluber */
+            overflow: hidden;
         }
 
-        /* HEADER KOLASE - Bagian hijau atas */
+        /* HEADER KOLASE */
         #header-custom {
             display: grid;
-            grid-template-columns: 150px 1fr; /* Kolom logo dan kolom teks */
+            grid-template-columns: 150px 1fr;
             background-color: #105f00; /* Warna hijau gelap */
             color: white;
             padding: 2px 0;
@@ -75,9 +75,9 @@
         }
 
         #header-logo img {
-            width: 80px; /* Ukuran logo */
+            width: 80px; 
             height: auto;
-            background-color: #105f00; /* Latar belakang logo */
+            background-color: transparent; /* Transparan agar sesuai warna header */
             padding: 5px;
             border-radius: 0px;
         }
@@ -88,7 +88,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100%; /* Pastikan mengisi tinggi grid */
+            height: 100%;
         }
 
         #header-teks h2 {
@@ -102,7 +102,7 @@
             height: 2px;
             background-color: white;
             margin: 5px 0;
-            width: 100%; /* Lebar garis */
+            width: 100%;
         }
 
         #header-teks h3 {
@@ -129,27 +129,27 @@
         #kolase-grid-foto {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, minmax(280px, 1fr)); /* Tinggi foto */
-            gap: 5px; /* Jarak antar foto */
-            padding: 5px; /* Padding di sekitar grid foto */
-            background-color: white; /* Pastikan background grid putih */
+            grid-template-rows: repeat(2, minmax(280px, 1fr));
+            gap: 5px;
+            padding: 5px;
+            background-color: white;
         }
 
         .foto-sel {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: #eee; /* Fallback */
-            border: 1px solid #ccc; /* Border tipis untuk foto */
-            border-radius: 2px; /* Sedikit lengkungan pada foto */
-            display: flex; /* Untuk memastikan gambar mengisi penuh */
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
             color: #555;
         }
         
-        /* Placeholder Images - Ganti dengan URL Anda atau biarkan kosong */
+        /* Placeholder Images */
         #foto1 { background-image: url('https://picsum.photos/400/300?random=1'); }
         #foto2 { background-image: url('https://picsum.photos/400/300?random=2'); }
         #foto3 { background-image: url('https://picsum.photos/400/300?random=3'); }
@@ -171,7 +171,7 @@
 <body>
 
     <div id="kontrol-area">
-        <h2>🛠️ Kontrol Kolase Kustom</h2>
+        <h2>KOLASE DOKUM YONIF TP 843/PYV</h2>
         <label for="input-tanggal">Tanggal:</label>
         <input type="date" id="input-tanggal" value="2024-07-26">
         
@@ -179,12 +179,12 @@
         <input type="text" id="input-judul-atas" value="YONIF TP 843 / PATRIOT YUDHA VIKASA">
         
         <label for="input-judul-bawah">Teks Judul Bawah:</label>
-        <input type="text" id="input-judul-bawah" value="GIAT PEMBERSIHAN DAPUR">
+        <input type="text" id="input-judul-bawah" value="NAMA GIAT">
         
-        <label for="input-logo-url">URL Logo (Pastikan CORS diizinkan atau gunakan lokal):</label>
-        <input type="text" id="input-logo-url" value="file:///C:/Users/BTP/Documents/HAFIDZ/CODE/LOGO%20PYV.png" placeholder="URL Logo (e.g., logo.png)">
+        <label for="input-logo-file">Pilih File Logo:</label>
+        <input type="file" id="input-logo-file" accept="image/*">
         
-        <p>Pilih Foto Kolase (Ganti Placeholder):</p>
+        <p>Pilih Foto Kolase:</p>
         <label>Foto 1:</label><input type="file" class="input-foto" data-target="foto1">
         <label>Foto 2:</label><input type="file" class="input-foto" data-target="foto2">
         <label>Foto 3:</label><input type="file" class="input-foto" data-target="foto3">
@@ -196,7 +196,7 @@
     <div id="kolase-wrapper">
         <div id="header-custom">
             <div id="header-logo">
-                <img id="logo-display" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Coat_of_arms_of_Indonesia.svg" alt="Logo">
+                <img id="logo-display" src="" alt="Logo">
             </div>
             <div id="header-teks">
                 <h2 id="judul-atas-display">YONIF TP 843 / PATRIOT YUDHA VIKASA</h2>
@@ -224,7 +224,7 @@
             const inputTanggal = document.getElementById('input-tanggal');
             const inputJudulAtas = document.getElementById('input-judul-atas');
             const inputJudulBawah = document.getElementById('input-judul-bawah');
-            const inputLogoUrl = document.getElementById('input-logo-url');
+            const inputLogoFile = document.getElementById('input-logo-file'); // <--- BERUBAH
             const btnDownload = document.getElementById('btn-download');
             const inputFotoElements = document.querySelectorAll('.input-foto');
 
@@ -235,7 +235,7 @@
             const logoDisplay = document.getElementById('logo-display');
             const kolaseWrapper = document.getElementById('kolase-wrapper');
 
-            // Fungsi Update Teks & Gambar
+            // Fungsi Update Teks
             function updateTanggalDisplay(dateValue) {
                 const date = new Date(dateValue);
                 const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -251,15 +251,22 @@
                 judulBawahDisplay.textContent = inputJudulBawah.value;
             }
 
-            function updateLogo() {
-                logoDisplay.src = inputLogoUrl.value;
+            // Fungsi BARU: Memuat logo dari input file
+            function updateLogoFromFile(file) {
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        logoDisplay.src = e.target.result;
+                    }
+                    reader.readAsDataURL(file); // Memuat file sebagai Data URL
+                }
             }
-
+            
             // Initial Load / Default Values
             updateTanggalDisplay(inputTanggal.value);
             updateJudulAtas();
             updateJudulBawah();
-            updateLogo();
+            // Logo default tidak diatur karena menggunakan file input
 
             // Event Listeners for Controls
             inputTanggal.addEventListener('change', function() {
@@ -267,8 +274,14 @@
             });
             inputJudulAtas.addEventListener('input', updateJudulAtas);
             inputJudulBawah.addEventListener('input', updateJudulBawah);
-            inputLogoUrl.addEventListener('change', updateLogo);
             
+            // Event Listener BARU untuk Logo
+            inputLogoFile.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                updateLogoFromFile(file);
+            });
+            
+            // Event Listener untuk Foto Kolase (TETAP SAMA)
             inputFotoElements.forEach(input => {
                 input.addEventListener('change', function(event) {
                     const file = event.target.files[0];
@@ -285,12 +298,14 @@
                 });
             });
 
-            // Fungsi Download Kolase (Menggunakan html2canvas)
+            // Fungsi Download Kolase (SANGAT PENTING: Menggunakan Data URL)
             btnDownload.addEventListener('click', function() {
-                html2canvas(kolaseWrapper, { // Target seluruh wrapper
-                    allowTaint: true, 
-                    useCORS: true,    
-                    scale: 2 
+                html2canvas(kolaseWrapper, {
+                    // Ketika semua gambar dimuat dari Data URL (file lokal),
+                    // masalah CORS secara efektif terhindari.
+                    allowTaint: true, 
+                    useCORS: true,    
+                    scale: 2 
                 }).then(canvas => {
                     const imageURL = canvas.toDataURL("image/png");
                     const a = document.createElement('a');
@@ -305,4 +320,5 @@
         });
     </script>
 </body>
+
 </html>
